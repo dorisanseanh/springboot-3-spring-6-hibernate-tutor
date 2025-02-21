@@ -3,7 +3,6 @@ package com.spring.rest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-//scanBasePackages nhận một mảng String chứa danh sách các package cần quét
 @SpringBootApplication(
         scanBasePackages = {"com.spring.common", "com.spring.rest"}
 )
