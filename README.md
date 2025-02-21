@@ -1,1 +1,1 @@
-# springboot-3-hibernate_tutor
+# springboot-3-hibernate-tutor
