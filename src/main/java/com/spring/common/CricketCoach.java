@@ -13,5 +13,5 @@ public class CricketCoach implements Coach {
         return "Practice for Cricket Coach";
     }
 
-    }
+}
 
