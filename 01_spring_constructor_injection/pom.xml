@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.spring</groupId>
-    <artifactId>overview</artifactId>
+    <artifactId>springboot-3-spring-6-hibernate-tutor</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>01_spring_overview</name>
     <description>01_spring_overview</description>
