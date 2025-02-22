@@ -1,4 +1,4 @@
-package com.spring.constructor.injection;
+package com.spring.setter.injection;
 
 import org.springframework.stereotype.Component;
 
@@ -7,6 +7,6 @@ public class CricketCoach implements Coach{
 
     @Override
     public String getDailyWorkout() {
-        return "Practice cricket workout";
+        return "Practice cricket workout :>>";
     }
 }

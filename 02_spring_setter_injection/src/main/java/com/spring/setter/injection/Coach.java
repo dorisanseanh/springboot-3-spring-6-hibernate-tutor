@@ -1,4 +1,4 @@
-package com.spring.constructor.injection;
+package com.spring.setter.injection;
 
 public interface Coach {
     String getDailyWorkout();

@@ -1,4 +1,4 @@
-package com.spring.constructor.injection;
+package com.spring.setter.injection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,7 +9,7 @@ public class DemoController {
     private Coach coach;
 
     @Autowired
-    public DemoController(Coach coach) {
+    public void setCoach(Coach coach) {
         this.coach = coach;
     }
 
