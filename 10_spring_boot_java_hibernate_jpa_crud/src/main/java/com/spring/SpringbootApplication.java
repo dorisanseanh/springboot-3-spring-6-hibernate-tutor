@@ -19,9 +19,25 @@ public class SpringbootApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            multipleStudent(studentDAO);
-//
+//            multipleStudent(studentDAO);
+            readStudent(studentDAO);
         };
+    }
+
+    private void readStudent(StudentDAO studentDAO) {
+        System.out.println("Creating new student ");
+        Student student1 = new Student("Botina", "Nguyen", "jadonnguyenh@gmail.com");
+//        save the student
+        System.out.println("Saving student: ");
+        studentDAO.save(student1);
+//        display id of the saved student
+        Long theId = student1.getId();
+        System.out.println("Saved student: " + theId);
+//retrive student based on the id
+        Student student = studentDAO.findById(theId);
+        System.out.println("Reading student: " + theId);
+//        display student
+        System.out.println("Updating student: " + student);
     }
 
     private void multipleStudent(StudentDAO studentDAO) {
@@ -40,6 +56,7 @@ public class SpringbootApplication {
         System.out.println("Saved student: " + student2.getFirstName());
         System.out.println("Saved student: " + student3.getFirstName());
     }
+
     //     If you want change index of mysql auto increment start =3000
 //    open mysql run alter table student_tracker.student auto_increment=3000;
 //    if you want remove data and set auto_increment =1

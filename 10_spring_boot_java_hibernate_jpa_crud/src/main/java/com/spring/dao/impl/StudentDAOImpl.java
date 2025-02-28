@@ -21,4 +21,9 @@ public class StudentDAOImpl implements StudentDAO {
         entiytManager.persist(student);
 
     }
+
+    @Override
+    public Student findById(Long id) {
+         return entiytManager.find(Student.class, id);
+    }
 }
