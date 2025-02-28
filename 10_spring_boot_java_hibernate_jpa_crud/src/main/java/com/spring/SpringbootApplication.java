@@ -29,7 +29,7 @@ public class SpringbootApplication {
         System.out.println("Creating student");
         Student student1 = new Student("Botina", "Nguyen", "jadonnguyenh@gmail.com");
         Student student2 = new Student("Ashlenguci", "Nguyen", "ashleynguyen@gmail.com");
-        Student student3 = new Student("Hanna", "Bui", "anna@gmail.com");
+        Student student3 = new Student("", "Bui", "anna@gmail.com");
 //        save the student
         System.out.println("Saving student: ");
         studentDAO.save(student1);
@@ -40,16 +40,19 @@ public class SpringbootApplication {
         System.out.println("Saved student: " + student2.getFirstName());
         System.out.println("Saved student: " + student3.getFirstName());
     }
+    //     If you want change index of mysql auto increment start =3000
+//    open mysql run alter table student_tracker.student auto_increment=3000;
+//    if you want remove data and set auto_increment =1
+//    you can run truncate student_tracker.student;
+    private void createStudent(StudentDAO studentDAO) {
+//        create the student object
+        System.out.println("Creating student");
+        Student student = new Student("Dorisanse", "Bui", "dorisanseanh@gmail.com");
+//        save the student
+        System.out.println("Saving student: ");
+        studentDAO.save(student);
+//        display id of the saved student
+        System.out.println("Saved student: " + student.getFirstName());
 
-//    private void createStudent(StudentDAO studentDAO) {
-////        create the student object
-//        System.out.println("Creating student");
-//        Student student = new Student("Dorisanse", "Bui", "dorisanseanh@gmail.com");
-////        save the student
-//        System.out.println("Saving student: ");
-//        studentDAO.save(student);
-////        display id of the saved student
-//        System.out.println("Saved student: " + student.getFirstName());
-//
-//    }
+    }
 }
