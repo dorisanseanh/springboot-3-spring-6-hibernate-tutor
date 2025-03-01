@@ -21,15 +21,19 @@ public class SpringbootApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            deleteStudent(studentDAO);
+            deleteAll(studentDAO);
         };
     }
 
+    private void deleteAll(StudentDAO studentDAO) {
+        System.out.println("Deleting all students");
+         int studentDel = studentDAO.deleteAll();
+         System.out.println("Deleted " + studentDel + " students");
+    }
+
     private void deleteStudent(StudentDAO studentDAO) {
-        System.out.println("Find student by id:");
-        Student student = studentDAO.findById(2);
-        System.out.println("Delete student: " + student);
-        studentDAO.delete(2);
+        int studentId = 3;
+        studentDAO.delete(studentId);
         System.out.println("After deleting student: ");
         studentDAO.findAll().forEach(System.out::println);
 
