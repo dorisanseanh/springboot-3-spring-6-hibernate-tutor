@@ -9,7 +9,7 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private int id;
 
     @Column(name = "first_name")
     private String firstName;
@@ -32,12 +32,14 @@ public class Student {
     }
 
     //define getter and setter
-    public void setId(Long id) {
-        this.id = id;
+
+
+    public int getId() {
+        return id;
     }
 
-    public Long getId() {
-        return id;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getFirstName() {

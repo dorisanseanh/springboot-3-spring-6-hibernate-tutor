@@ -21,8 +21,22 @@ public class SpringbootApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            queryStudentByLastName(studentDAO);
+            updateStudent(studentDAO);
         };
+    }
+
+    private void updateStudent(StudentDAO studentDAO) {
+//        get id student
+        System.out.println("Find student id = 1: ");
+        int id = 1;
+        Student student = studentDAO.findById(1);
+//        update student with id
+        student.setFirstName("Anna");
+        System.out.println("Update student :");
+        studentDAO.update(student);
+        System.out.println("Update student first name: " + student.getFirstName());
+
+//        dispaly
     }
 
     private void queryStudentByLastName(StudentDAO studentDAO) {
@@ -46,7 +60,7 @@ public class SpringbootApplication {
         System.out.println("Saving student: ");
         studentDAO.save(student1);
 //        display id of the saved student
-        Long theId = student1.getId();
+        int theId = student1.getId();
         System.out.println("Saved student: " + theId);
 //retrive student based on the id
         Student student = studentDAO.findById(theId);
