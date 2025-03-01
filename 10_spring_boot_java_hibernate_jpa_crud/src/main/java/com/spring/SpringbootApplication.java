@@ -21,7 +21,7 @@ public class SpringbootApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-            deleteAll(studentDAO);
+            multipleStudent(studentDAO);
         };
     }
 
@@ -88,7 +88,7 @@ public class SpringbootApplication {
         System.out.println("Creating student");
         Student student1 = new Student("Botina", "Nguyen", "jadonnguyenh@gmail.com");
         Student student2 = new Student("Ashlenguci", "Nguyen", "ashleynguyen@gmail.com");
-        Student student3 = new Student("", "Bui", "anna@gmail.com");
+        Student student3 = new Student("Dorisanse", "Bui", "anna@gmail.com");
 //        save the student
         System.out.println("Saving student: ");
         studentDAO.save(student1);
