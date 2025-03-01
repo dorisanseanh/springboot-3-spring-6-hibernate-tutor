@@ -21,10 +21,15 @@ public class SpringbootApplication {
     @Bean
     public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
         return runner -> {
-//            multipleStudent(studentDAO);
-//            readStudent(studentDAO);
-            queryStudent(studentDAO);
+            queryStudentByLastName(studentDAO);
         };
+    }
+
+    private void queryStudentByLastName(StudentDAO studentDAO) {
+        List<Student> students = studentDAO.findByLastName("Anh");
+        for (Student student : students) {
+            System.out.println(student.getEmail());
+        }
     }
 
     private void queryStudent(StudentDAO studentDAO) {
