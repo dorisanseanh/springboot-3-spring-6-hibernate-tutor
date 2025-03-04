@@ -31,7 +31,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return employee;
     }
 
-
+    //fix: Automatically handle insert and update by using merge
+    //instead of persist to avoid IllegalArgumentException
+    // merge include update and add new item
     @Override
     public Employee save(Employee employee) {
         entityManager.merge(employee); // Tự động xử lý cả insert lẫn update
