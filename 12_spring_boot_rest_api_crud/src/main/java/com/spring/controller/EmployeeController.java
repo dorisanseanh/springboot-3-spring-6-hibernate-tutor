@@ -3,9 +3,7 @@ package com.spring.controller;
 import com.spring.dao.EmployeeDAO;
 import com.spring.entity.Employee;
 import com.spring.service.EmployeeService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,5 +19,22 @@ public class EmployeeController {
     @GetMapping("/employees")
     public List<Employee> getEmployees() {
         return employeeService.findAll();
+    }
+
+    @GetMapping("/employees/{employeeId}")
+    public Employee getEmployee(@PathVariable int employeeId) {
+        Employee employee = employeeService.findById(employeeId);
+        if (employee == null) {
+            throw new RuntimeException(employeeId + " not found");
+        }
+        return employee;
+    }
+
+    @PostMapping("/employees")
+    public Employee addEmployee(@RequestBody Employee employee) {
+    //also just in case they pass an id in JSON ... set id to 0
+        employee.setId(0);
+    //        this is force a save  new item ... instead of update
+        return employeeService.save(employee);
     }
 }
