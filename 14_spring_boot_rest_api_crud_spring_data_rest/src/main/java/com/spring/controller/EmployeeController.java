@@ -2,7 +2,6 @@ package com.spring.controller;
 
 import com.spring.entity.Employee;
 import com.spring.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +11,6 @@ import java.util.List;
 public class EmployeeController {
     private EmployeeService employeeService;
 
-    @Autowired
     public EmployeeController(EmployeeService employeeService) {
         this.employeeService = employeeService;
     }
@@ -21,6 +19,7 @@ public class EmployeeController {
     public List<Employee> getEmployees() {
         return employeeService.findAll();
     }
+
     @GetMapping("/employees/{employeeId}")
     public Employee getEmployee(@PathVariable int employeeId) {
         Employee employee = employeeService.findById(employeeId);
