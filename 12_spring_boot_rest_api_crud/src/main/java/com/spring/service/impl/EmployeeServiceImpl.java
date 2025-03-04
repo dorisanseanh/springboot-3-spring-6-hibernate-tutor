@@ -37,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Transactional
     @Override
     public Employee update(Employee employee) {
-        return employeeDAO.update(employee);
+        return employeeDAO.save(employee);
 
     }
 

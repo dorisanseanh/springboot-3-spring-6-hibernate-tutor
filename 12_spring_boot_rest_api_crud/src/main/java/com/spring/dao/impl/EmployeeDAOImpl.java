@@ -31,17 +31,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         return employee;
     }
 
+
     @Override
     public Employee save(Employee employee) {
-        entityManager.persist(employee);
-
-        return employee;
-    }
-
-    @Override
-    public Employee update(Employee employee) {
-        entityManager.merge(employee);
-
+        entityManager.merge(employee); // Tự động xử lý cả insert lẫn update
         return employee;
     }
 

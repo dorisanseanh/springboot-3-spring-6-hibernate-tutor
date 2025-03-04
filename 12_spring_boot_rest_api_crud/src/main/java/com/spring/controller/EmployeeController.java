@@ -32,9 +32,15 @@ public class EmployeeController {
 
     @PostMapping("/employees")
     public Employee addEmployee(@RequestBody Employee employee) {
-    //also just in case they pass an id in JSON ... set id to 0
+        //also just in case they pass an id in JSON ... set id to 0
         employee.setId(0);
-    //        this is force a save  new item ... instead of update
+        //        this is force a save  new item ... instead of update
         return employeeService.save(employee);
+    }
+
+    @PutMapping("/employees")
+    public Employee updateEmployee(@RequestBody Employee employee) {
+        Employee employeeUpdate = employeeService.update(employee);
+        return employeeUpdate;
     }
 }
