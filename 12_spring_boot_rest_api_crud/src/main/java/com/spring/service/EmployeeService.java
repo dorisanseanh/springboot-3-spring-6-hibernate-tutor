@@ -1,10 +1,10 @@
-package com.spring.dao;
+package com.spring.service;
 
 import com.spring.entity.Employee;
 
 import java.util.List;
 
-public interface EmployeeDAO {
+public interface EmployeeService {
     List<Employee> findAll();
 
     Employee findById(int id);
@@ -14,6 +14,4 @@ public interface EmployeeDAO {
     Employee update(Employee employee);
 
     void delete(int id);
-
-
 }
