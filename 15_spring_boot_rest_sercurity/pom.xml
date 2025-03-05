@@ -8,7 +8,7 @@
 		<version>3.3.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.luv2code.springboot</groupId>
+	<groupId>com.springt</groupId>
 	<artifactId>15_spring_boot_rest_sercurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>15_spring_boot_rest_sercurity</name>
