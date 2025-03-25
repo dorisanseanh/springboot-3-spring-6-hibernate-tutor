@@ -35,7 +35,7 @@ public class DemoController {
 
     @PostMapping("/processFormVersion")
     public String processFormVersion(@RequestParam("name") String theName, Model model) {
-        theName = theName.toUpperCase();
+        theName = theName.toUppeIOII888rCase();
         String result = "Hello my friend! " + theName;
         model.addAttribute("message", result);
         return "form";
